@@ -8,7 +8,7 @@
           <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
             <div class="card-body p-4 p-md-5">
               <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Register Here To Post Your Story</h3>
-              <form method="POST" action="/login">
+              <form method="POST" action="/new_user">
                 @csrf
                 <div class="row">
                   <div class="col-md-6 mb-4">
@@ -39,7 +39,7 @@
                   <div class="col-md-6 mb-4 d-flex align-items-center">
   
                     <div class="form-outline datepicker w-100">
-                      <input type="text" class="form-control form-control-lg" id="birthdayDate" name="topic" value="{{old('topic')}}"/>
+                      <input type="text" class="form-control form-control-lg" placeholder="Tec, Health, Lifestyle, etc" id="birthdayDate" name="topic" value="{{old('topic')}}"/>
                       @error('topic')
                       <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                          @enderror
@@ -79,7 +79,7 @@
                   <div class="col-md-6 mb-4 pb-2">
   
                     <div class="form-outline">
-                      <input type="email" id="emailAddress" class="form-control form-control-lg" name="email" value="{{old('topic')}}"/>
+                      <input type="email" id="emailAddress" class="form-control form-control-lg" name="email" value="{{old('email')}}"/>
                       @error('email')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                            @enderror
@@ -90,7 +90,7 @@
                   <div class="col-md-6 mb-4 pb-2">
   
                     <div class="form-outline">
-                      <input type="tel" id="phoneNumber" class="form-control form-control-lg" name="phone" value="{{old('topic')}}"/>
+                      <input type="tel" id="phoneNumber" class="form-control form-control-lg" name="phone" value="{{old('phone')}}"/>
                       @error('phone')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                            @enderror
@@ -99,11 +99,35 @@
   
                   </div>
                 </div>
+                <div class="row">
+                  <div class="col-md-6 mb-4 pb-2">
+  
+                    <div class="form-outline">
+                      <input type="password" id="password" class="form-control form-control-lg" name="password" value="{{old('password')}}"/>
+                      @error('password')
+                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                           @enderror
+                      <label class="form-label" for="password">Password</label>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4 pb-2">
+  
+                    <div class="form-outline">
+                      <input type="password" id="password_confirmation" class="form-control form-control-lg" name="password_confirmation" value="{{old('password_confirmation')}}"/>
+                      @error('password_confirmation')
+                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                           @enderror
+                      <label class="form-label" for="password_confirmation">Confirm Password</label>
+                    </div>
+  
+                  </div>
+                </div>
   
                 
   
                 <div class="mt-4 pt-2">
-                  <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
+                  <input class="btn btn-primary btn-md" type="submit" value="Register" />
                 </div>
   
               </form>
