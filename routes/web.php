@@ -17,14 +17,18 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('welcome');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Login form
 Route::get('/login', [UserController::class, 'login_form']);
 //Reg form
 Route::get('/register', [UserController::class, 'reg_form']);
 //User registration
 Route::post('/new_user', [UserController::class, 'new_user']);
+//User login
+Route::post('/user/authenticate', [UserController::class, 'login']);
 
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

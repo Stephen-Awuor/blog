@@ -15,9 +15,9 @@
   
                     <div class="form-outline">
                       <input type="text" id="firstName" class="form-control form-control-lg" name="firstname" value="{{old('firstname')}}"/>
-                      @error('firstname')
-                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                           @enderror
+                      @if($errors->has('firstname'))
+    <div class="text-danger">{{ $errors->first('firstname') }}</div>
+@endif
                       <label class="form-label" for="firstName">First Name</label>
                     </div>
   
@@ -26,9 +26,9 @@
   
                     <div class="form-outline">
                       <input type="text" id="lastName" class="form-control form-control-lg" name="lastname" value="{{old('lastname')}}"/>
-                      @error('lastname')
-                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                           @enderror
+                      @if($errors->has('lastname'))
+                      <div class="text-danger">{{ $errors->first('lastname') }}</div>
+                  @endif
                       <label class="form-label" for="lastName">Last Name</label>
                     </div>
   
@@ -40,9 +40,9 @@
   
                     <div class="form-outline datepicker w-100">
                       <input type="text" class="form-control form-control-lg" placeholder="Tec, Health, Lifestyle, etc" id="birthdayDate" name="topic" value="{{old('topic')}}"/>
-                      @error('topic')
-                      <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                         @enderror
+                      @if($errors->has('topic'))
+    <div class="text-danger">{{ $errors->first('topic') }}</div>
+@endif
                       <label for="birthdayDate" class="form-label">Topic (Field)</label>
                     </div>
   
@@ -52,7 +52,7 @@
                     <h6 class="mb-2 pb-1">Gender: </h6>
   
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
+                      <input class="form-check-input" type="radio" name="gender" id="femaleGender"
                         value="option1" checked name="gender" value="{{old('topic')}}"/>
                         @error('gender')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -66,12 +66,6 @@
                       <label class="form-check-label" for="maleGender">Male</label>
                     </div>
   
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
-                        value="option3" />
-                      <label class="form-check-label" for="otherGender">Other</label>
-                    </div>
-  
                   </div>
                 </div>
   
@@ -80,9 +74,9 @@
   
                     <div class="form-outline">
                       <input type="email" id="emailAddress" class="form-control form-control-lg" name="email" value="{{old('email')}}"/>
-                      @error('email')
-                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                           @enderror
+                      @if($errors->has('email'))
+    <div class="text-danger">{{ $errors->first('email') }}</div>
+@endif
                       <label class="form-label" for="emailAddress">Email</label>
                     </div>
   
@@ -91,9 +85,9 @@
   
                     <div class="form-outline">
                       <input type="tel" id="phoneNumber" class="form-control form-control-lg" name="phone" value="{{old('phone')}}"/>
-                      @error('phone')
-                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                           @enderror
+                      @if($errors->has('phone'))
+    <div class="text-danger">{{ $errors->first('phone') }}</div>
+@endif
                       <label class="form-label" for="phoneNumber">Phone Number</label>
                     </div>
   
@@ -104,9 +98,9 @@
   
                     <div class="form-outline">
                       <input type="password" id="password" class="form-control form-control-lg" name="password" value="{{old('password')}}"/>
-                      @error('password')
-                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                           @enderror
+                      @if($errors->has('password'))
+    <div class="text-danger">{{ $errors->first('password') }}</div>
+@endif
                       <label class="form-label" for="password">Password</label>
                     </div>
   
@@ -115,9 +109,9 @@
   
                     <div class="form-outline">
                       <input type="password" id="password_confirmation" class="form-control form-control-lg" name="password_confirmation" value="{{old('password_confirmation')}}"/>
-                      @error('password_confirmation')
-                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                           @enderror
+                      @if($errors->has('password_confirmation'))
+    <div class="text-danger">{{ $errors->first('password_confirmation') }}</div>
+@endif
                       <label class="form-label" for="password_confirmation">Confirm Password</label>
                     </div>
   
