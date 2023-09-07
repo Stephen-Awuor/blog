@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('includes.style')
 
 @section('content')
 <section class="h-100 gradient-form" style="background-color: #eee;">
