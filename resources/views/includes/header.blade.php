@@ -43,7 +43,7 @@
                     <a class="nav-link" href="#">My Articles </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Add Article </a>
+                    <a class="nav-link" href="/new">Add Article </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Profile </a>
@@ -76,5 +76,7 @@
           </nav>
     @yield('content')
         </main>
+
+        
 </body>
 </html>

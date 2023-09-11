@@ -42,11 +42,12 @@ class UserController extends Controller
                 $request->session()->regenerate();
                 return redirect('home')->with('message', 'Log in successful!');
             }
-            return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
-
-       
+            return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');  
     }
-
-
-    
+    public function logout(Request $request){
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/')->with('message', 'You have been logged out!');
+    }   
 }

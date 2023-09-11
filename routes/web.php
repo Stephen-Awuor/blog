@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ArticlesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,13 @@ Route::get('/register', [UserController::class, 'reg_form']);
 Route::post('/new_user', [UserController::class, 'new_user']);
 //User login
 Route::post('/user/authenticate', [UserController::class, 'login']);
+//user logout
+Route::get('/logout', [UserController::class, 'logout']);
+//show create article form
+Route::get('/new', [ArticlesController::class, 'new_article']);
+//submit article
+Route::get('/new_article', [ArticlesController::class, 'add_article']);
+
 
 
 
