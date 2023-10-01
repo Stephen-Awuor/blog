@@ -1,15 +1,14 @@
 <?php
 
 namespace App\Models;
-
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Articles extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['user_id', 'title', 'tags', 'article', 'file', 'confirm',];
+    protected $fillable = ['user_id', 'title', 'tags', 'article', 'file', 'confirm'];
 
      //Relationship to user
  public function user() {

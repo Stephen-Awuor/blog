@@ -9,12 +9,13 @@
 
                 <div class="card-body">
                   <form method="POST" action="/new_article">
+                    @csrf
                         <!-- Name input -->
                         <div class="form-outline mb-4">
                           <input type="text" id="title" class="form-control form-control-lg" name="title" value="{{old('title')}}"/>
                           @if($errors->has('title'))
-        <div class="text-danger">{{ $errors->first('title') }}</div>
-    @endif
+                          <div class="text-danger">{{ $errors->first('title') }}</div>
+                          @endif
                           <label class="form-label" for="form4Example1">Article Title</label>
                         </div>
                       
@@ -22,17 +23,17 @@
                         <div class="form-outline mb-4">
                           <input type="text" id="tags" class="form-control form-control-lg" name="tags" value="{{old('tags')}}"/>
                           @if($errors->has('tags'))
-        <div class="text-danger">{{ $errors->first('tags') }}</div>
-    @endif
+                          <div class="text-danger">{{ $errors->first('tags') }}</div>
+                          @endif
                           <label class="form-label" for="form4Example2">Tags</label>
                         </div>
                       
                         <!-- Message input -->
                         <div class="form-outline mb-4">
-                          <textarea class="form-control" id="form4Example3" rows="4" value="{{old('article')}}"></textarea>
+                          <textarea class="form-control" id="form4Example3" name="article" rows="4" value="{{old('article')}}"></textarea>
                           @if($errors->has('article'))
-        <div class="text-danger">{{ $errors->first('article') }}</div>
-    @endif
+                          <div class="text-danger">{{ $errors->first('article') }}</div>
+                          @endif
                           <label class="form-label" for="form4Example3">Artile</label>
                         </div>
 

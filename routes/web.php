@@ -34,7 +34,9 @@ Route::get('/logout', [UserController::class, 'logout']);
 //show create article form
 Route::get('/new', [ArticlesController::class, 'new_article']);
 //submit article
-Route::get('/new_article', [ArticlesController::class, 'add_article']);
+Route::post('/new_article', [ArticlesController::class, 'add_article']);
+
+
 
 
 

@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('articles_', function (Blueprint $table) {
+        Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('title');
             $table->string('tags');
-            $table->longText('article');
-            $table->string('file')->nullable();
-            $table->string('confirm')->nullable();
+            $table->string('article');
+            $table->string('file');
+            $table->string('confirm');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articles_');
+        Schema::dropIfExists('articles');
     }
 };
